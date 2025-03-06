@@ -3,7 +3,10 @@ zerops:
     run:
       base: java@21
       prepareCommands: 
-        - curl -L "https://downloads.metabase.com/v${METABASE_VERSION}/metabase.jar" -o metabase.jar
+        - |
+          curl -L "https://downloads.metabase.com/v${METABASE_VERSION}/metabase.jar" -o /var/www/metabase.jar
+          chown zerops:zerops /var/www/metabase.jar
+          chmod 644 /var/www/metabase.jar
       envVariables: 
         METABASE_VERSION: 0.48.0
         MB_TYPE: postgres
