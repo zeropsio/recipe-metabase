@@ -1,0 +1,17 @@
+zerops:
+  - setup: metabase
+    run:
+      base: java@21
+      prepareCommands: curl -L "https://downloads.metabase.com/v${METABASE_VERSION}/metabase.jar" -o metabase.jar
+      envVariables: 
+        METABASE_VERSION: 0.48.0
+        MB_TYPE: postgres
+        MB_DB_USER: ${postgresql0_user}
+        MB_DB_PORT: ${postgresql0_port}
+        MB_DB_HOST: ${postgresql0_hostname}
+        MB_DB_PASS: ${postgresql0_password}
+        MB_DB_NAME: ${postgresql0_dbName}        
+      ports:
+        - port: 3000
+          httpSupport: true
+      start: java --add-opens java.base/java.nio=ALL-UNNAMED -jar metabase.jar
