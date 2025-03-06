@@ -8,6 +8,8 @@ project:
 services:
   - hostname: metabase
     type: java@21
+    buildFromGit: https://github.com/zeropsio/recipe-metabase
+    enableSubdomainAccess: true
     envSecrets:
       MB_INSTANCE_ID: <@generateRandomBytes(<16>) | toHex>
     verticalAutoscaling:
