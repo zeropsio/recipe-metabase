@@ -6,11 +6,11 @@ zerops:
       envVariables: 
         METABASE_VERSION: 0.48.0
         MB_TYPE: postgres
-        MB_DB_USER: ${postgresql0_user}
-        MB_DB_PORT: ${postgresql0_port}
-        MB_DB_HOST: ${postgresql0_hostname}
-        MB_DB_PASS: ${postgresql0_password}
-        MB_DB_NAME: ${postgresql0_dbName}        
+        MB_DB_USER: ${db_user}
+        MB_DB_PORT: ${db_port}
+        MB_DB_HOST: ${db_hostname}
+        MB_DB_PASS: ${db_password}
+        MB_DB_NAME: ${db_dbName}        
       ports:
         - port: 3000
           httpSupport: true
