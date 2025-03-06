@@ -2,6 +2,7 @@ zerops:
   - setup: metabase
     run:
       base: java@21
+      os: ubuntu
       prepareCommands: 
         - |
           curl -L "https://downloads.metabase.com/v${METABASE_VERSION}/metabase.jar" -o /var/www/metabase.jar
