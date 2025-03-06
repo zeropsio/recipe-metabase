@@ -9,6 +9,7 @@ zerops:
           chmod 644 /var/www/metabase.jar
       envVariables: 
         METABASE_VERSION: 0.48.0
+        JAVA_OPTS: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=75 -XX:+UseG1GC"
         MB_TYPE: postgres
         MB_DB_USER: ${db_user}
         MB_DB_PORT: ${db_port}
@@ -18,4 +19,4 @@ zerops:
       ports:
         - port: 3000
           httpSupport: true
-      start: java --add-opens java.base/java.nio=ALL-UNNAMED -jar metabase.jar
+      start: java ${JAVA_OPTS} --add-opens java.base/java.nio=ALL-UNNAMED -jar /var/www/metabase.jar
