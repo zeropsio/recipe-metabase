@@ -9,7 +9,7 @@ zerops:
           chown zerops:zerops /var/www/metabase.jar
           chmod 644 /var/www/metabase.jar
       envVariables: 
-        METABASE_VERSION: 0.53.0
+        METABASE_VERSION: 0.53.1
         JAVA_OPTS: "-Xmx3584m -Xms2048m"
         MB_TYPE: postgres
         MB_DB_USER: ${db_user}
