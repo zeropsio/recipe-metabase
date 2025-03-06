@@ -2,7 +2,8 @@ zerops:
   - setup: metabase
     run:
       base: java@21
-      prepareCommands: curl -L "https://downloads.metabase.com/v${METABASE_VERSION}/metabase.jar" -o metabase.jar
+      prepareCommands: 
+        - curl -L "https://downloads.metabase.com/v${METABASE_VERSION}/metabase.jar" -o metabase.jar
       envVariables: 
         METABASE_VERSION: 0.48.0
         MB_TYPE: postgres
