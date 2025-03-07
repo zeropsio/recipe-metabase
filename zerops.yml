@@ -11,7 +11,7 @@ zerops:
       envVariables: 
         METABASE_VERSION: 0.53.1
         JAVA_OPTS: "-Xmx3584m -Xms2048m"
-        MB_TYPE: postgres
+        MB_DB_TYPE: postgres
         MB_DB_USER: ${db_user}
         MB_DB_PORT: ${db_port}
         MB_DB_HOST: ${db_hostname}
